@@ -23,7 +23,7 @@ function App() {
   };
 
   return (
-    <>
+    <div className="App">
       <Layout todolist={todolist} setTodolist={setTodolist} />
       <MakeCards
         now="Working ✍🏼"
@@ -69,7 +69,7 @@ function App() {
         doneOrCancelBtn={doneOrCancelBtn}
         isActive={true}
       />
-    </>
+    </div>
   );
 }
 

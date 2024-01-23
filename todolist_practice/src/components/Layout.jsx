@@ -29,9 +29,9 @@ function Layout({ todolist, setTodolist }) {
   return (
     <header className="header">
       <h1>My todo list</h1>
-      <div>
-        <input value={title} onChange={titleInput}></input>
-        <input value={content} onChange={contentInput}></input>
+      <div className="inputBox">
+        <input value={title} onChange={titleInput} className="todo"></input>
+        <input value={content} onChange={contentInput} className="todo"></input>
         <button onClick={addBtn}>추가하기</button>
       </div>
     </header>
