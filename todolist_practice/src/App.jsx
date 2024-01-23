@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Layout from "./components/Layout";
+import MakeCards from "./components/MakeCards";
 import "./App.css";
 
 function App() {
@@ -24,7 +25,14 @@ function App() {
   return (
     <>
       <Layout todolist={todolist} setTodolist={setTodolist} />
-      <div>
+      <MakeCards
+        now="Working ✍🏼"
+        todolist={todolist}
+        deleteBtn={deleteBtn}
+        doneOrCancelBtn={doneOrCancelBtn}
+        isActive={false}
+      />
+      {/* <div>
         <h2>Working</h2>
         {todolist
           .filter((a) => a.isDone === false)
@@ -38,8 +46,8 @@ function App() {
               </div>
             );
           })}
-      </div>
-      <div>
+      </div> */}
+      {/* <div>
         <h2>Done</h2>
         {todolist
           .filter((a) => a.isDone === true)
@@ -53,7 +61,14 @@ function App() {
               </div>
             );
           })}
-      </div>
+      </div> */}
+      <MakeCards
+        now="Done 🙌🏻"
+        todolist={todolist}
+        deleteBtn={deleteBtn}
+        doneOrCancelBtn={doneOrCancelBtn}
+        isActive={true}
+      />
     </>
   );
 }

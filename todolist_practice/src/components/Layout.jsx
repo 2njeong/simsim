@@ -27,7 +27,7 @@ function Layout({ todolist, setTodolist }) {
   };
 
   return (
-    <header>
+    <header className="header">
       <h1>My todo list</h1>
       <div>
         <input value={title} onChange={titleInput}></input>
