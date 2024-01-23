@@ -1,33 +1,9 @@
 import { useState } from "react";
+import Layout from "./components/Layout";
 import "./App.css";
 
 function App() {
   const [todolist, setTodolist] = useState([]);
-
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
-
-  const titleInput = (e) => {
-    setTitle(e.target.value);
-  };
-
-  const contentInput = (e) => {
-    setContent(e.target.value);
-  };
-
-  const addBtn = () => {
-    const newTodo = {
-      id: Date.now(),
-      title: title,
-      content: content,
-      isDone: false,
-    };
-    const newTodolist = [...todolist, newTodo];
-    setTodolist(newTodolist);
-
-    setTitle("");
-    setContent("");
-  };
 
   const deleteBtn = (id) => {
     const restList = todolist.filter((a) => id !== a.id);
@@ -47,14 +23,7 @@ function App() {
 
   return (
     <>
-      <header>
-        <h1>My todo list</h1>
-        <div>
-          <input value={title} onChange={titleInput}></input>
-          <input value={content} onChange={contentInput}></input>
-          <button onClick={addBtn}>추가하기</button>
-        </div>
-      </header>
+      <Layout todolist={todolist} setTodolist={setTodolist} />
       <div>
         <h2>Working</h2>
         {todolist
