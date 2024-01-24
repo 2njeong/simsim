@@ -1,6 +1,21 @@
 import React from "react";
 
-function MakeCards({ now, todolist, deleteBtn, doneOrCancelBtn, isActive }) {
+function MakeCards({ now, todolist, setTodolist, isActive }) {
+  const deleteBtn = (id) => {
+    const restList = todolist.filter((a) => id !== a.id);
+    setTodolist(restList);
+  };
+
+  const doneOrCancelBtn = (id) => {
+    const newlist = todolist.map((todo) => {
+      if (id === todo.id) {
+        return { ...todo, isDone: !todo.isDone };
+      } else {
+        return todo;
+      }
+    });
+    setTodolist(newlist);
+  };
   return (
     <div className="todoCards">
       <h2>{now}</h2>

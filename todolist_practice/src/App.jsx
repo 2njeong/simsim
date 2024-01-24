@@ -6,30 +6,13 @@ import "./App.css";
 function App() {
   const [todolist, setTodolist] = useState([]);
 
-  const deleteBtn = (id) => {
-    const restList = todolist.filter((a) => id !== a.id);
-    setTodolist(restList);
-  };
-
-  const doneOrCancelBtn = (id) => {
-    const newlist = todolist.map((todo) => {
-      if (id === todo.id) {
-        return { ...todo, isDone: !todo.isDone };
-      } else {
-        return todo;
-      }
-    });
-    setTodolist(newlist);
-  };
-
   return (
     <div className="App">
       <Layout todolist={todolist} setTodolist={setTodolist} />
       <MakeCards
         now="Working ✍🏼"
         todolist={todolist}
-        deleteBtn={deleteBtn}
-        doneOrCancelBtn={doneOrCancelBtn}
+        setTodolist={setTodolist}
         isActive={false}
       />
       <div>
@@ -65,8 +48,7 @@ function App() {
       <MakeCards
         now="Done 🙌🏻"
         todolist={todolist}
-        deleteBtn={deleteBtn}
-        doneOrCancelBtn={doneOrCancelBtn}
+        setTodolist={setTodolist}
         isActive={true}
       />
     </div>
