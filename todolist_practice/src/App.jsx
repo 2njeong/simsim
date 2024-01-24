@@ -32,8 +32,8 @@ function App() {
         doneOrCancelBtn={doneOrCancelBtn}
         isActive={false}
       />
-      {/* <div>
-        <h2>Working</h2>
+      <div>
+        {/* <h2>Working</h2>
         {todolist
           .filter((a) => a.isDone === false)
           .map((todo) => {
@@ -46,8 +46,8 @@ function App() {
               </div>
             );
           })}
-      </div> */}
-      {/* <div>
+      </div>
+      <div>
         <h2>Done</h2>
         {todolist
           .filter((a) => a.isDone === true)
@@ -60,8 +60,8 @@ function App() {
                 <button onClick={() => doneOrCancelBtn(todo.id)}>취소</button>
               </div>
             );
-          })}
-      </div> */}
+          })} */}
+      </div>
       <MakeCards
         now="Done 🙌🏻"
         todolist={todolist}

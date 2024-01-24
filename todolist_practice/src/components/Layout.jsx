@@ -19,8 +19,16 @@ function Layout({ todolist, setTodolist }) {
       content: content,
       isDone: false,
     };
-    const newTodolist = [...todolist, newTodo];
-    setTodolist(newTodolist);
+    if (title && content) {
+      const newTodolist = [...todolist, newTodo];
+      setTodolist(newTodolist);
+    }
+    if (!title) {
+      alert("제목을 입력해주세요");
+    }
+    if (!content) {
+      alert("내용을 입력해주세요");
+    }
 
     setTitle("");
     setContent("");
