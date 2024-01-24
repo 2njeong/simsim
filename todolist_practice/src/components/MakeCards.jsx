@@ -3,7 +3,9 @@ import React from "react";
 function MakeCards({ now, todolist, setTodolist, isActive }) {
   const deleteBtn = (id) => {
     const restList = todolist.filter((a) => id !== a.id);
-    setTodolist(restList);
+    if (window.confirm("정말로 삭제하시겠습니까?")) {
+      setTodolist(restList);
+    }
   };
 
   const doneOrCancelBtn = (id) => {
